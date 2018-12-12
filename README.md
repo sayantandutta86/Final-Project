@@ -10,7 +10,7 @@ DELETE these lines from TEMPLATE up.
 
 # Title: Prediction of a disease outbreak using Monte Carlo Simulation
 
-## Team Member(s): Janki Thakkar, Sayed Shazeb Hussain, Sayanatan Dutta
+## Team Member(s): Janki Thakkar, Sayed Shazeb Hussain, Sayantan Dutta
 
 # Monte Carlo Simulation Scenario & Purpose:
 Purpose for our project is to find if the disease outbreak will affect the major population or not.
