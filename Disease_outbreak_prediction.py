@@ -11,8 +11,11 @@ def generate_score_for_patients():
         person1 = Person()
         virus1 = virus()
 
+        #aggregate score is calculated as the sum of the patient's total score plus 
+        #the score based on the virus he is infected with.
         aggregate_score = person1.get_total_score() + virus1.get_type_score()
 
+        #If the aggregate score exceeds a threshold level the patient is considered in red-zone.
         if aggregate_score >= 250:
             red_zone = red_zone+1
         total_count = total_count + 1
@@ -25,6 +28,7 @@ probability_list = []
 for i in range (1, 1000, 100):
     probability = 0
     agg_scr_list, red_zone_count, total_count = generate_score_for_patients()
+    #Detecting the probability spread of red-zone patients to assess possibility of outbreak
     probability = red_zone_count/total_count
     probability_list.append(probability)
 print(sum(probability_list)/len(probability_list))
