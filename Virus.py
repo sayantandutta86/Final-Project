@@ -11,7 +11,7 @@ class virus:
         self.type_score = 100 #default value
 
     def get_type_score(self):
-        """ Assign a pre-defined score based on time_diff value of an object
+        """ Assign a pre-defined score based on how contagious the virus is.
         :return: type_score
                 """
         if self.type == 'C':
