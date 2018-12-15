@@ -10,7 +10,7 @@ class virus:
         self.type = random.choice(['C','FC','MC'])
         self.type_score = 100 #default value
 
-    def get_type_score(self):
+    def get_type_score(self) -> int:
         """ Assign a pre-defined score based on how contagious the virus is.
         :return: type_score
                 """
