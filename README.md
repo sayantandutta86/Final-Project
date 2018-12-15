@@ -53,11 +53,12 @@ After research we zeroed in on the mentioned factors as they seemed to have a si
 The program calculates the probability of spread of the disease and tells the user whether medical intervention is required or not based on the input provided by the user. With different iteration rates and different probability outcomes the final outcome varies. So conditions were adjusted based on those factors. Different diseases have different threshold levels of outbreak, so for a given threshold level, virus level and population of the locality the program will give the result whether a medical intervention by the management is necessary or not.
 
 
-#### Output Example
+### Output Example
 Types of virus:
 1. Highly contagious
 2. Fairly contagious
 3. Mildly contagious
+
 Please select a virus type(1,2,3):1
 Insert the number of people:50
 Insert the threshold percentage:40
@@ -68,7 +69,7 @@ Number of people infected in the population of 50 is 31 based on 100000 iteratio
 Number of people infected in the population of 50 is 30 based on 1000000 iterations
 Based on the threshold value provided, intervention is required
 
-Note: We have genrated the plots to to show the variation in the probability range for giver number of iterations. It is in pdf file in the repository
+Note: We have genrated the plots to show the variation in the probability range for giver number of iterations. It is in pdf file in the repository
 
 
 ## Instructions on how to use the program:
