@@ -14,8 +14,8 @@ class virus:
         """ Assign a pre-defined score based on how contagious the virus is.
         :return: type_score
 
-        >>> v= virus()
-        >>> v.type in ['C','FC','MC']
+        >>> v= virus(1)
+        >>> v.type in [1,2,3]
         True
         >>> 10 <= v.get_type_score() <= 100
         True
