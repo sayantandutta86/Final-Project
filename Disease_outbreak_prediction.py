@@ -30,20 +30,20 @@ def generate_score_for_patients()-> tuple:
             red_zone = red_zone+1
         total_count = total_count + 1
         aggregate_score_list.append(aggregate_score)
-    #plt.plot(aggregate_score_list)
-    #plt.show()
     return (aggregate_score, red_zone, total_count)
 
 
 if __name__ == '__main__':
-    print("\n Options:")
-    print("1. Highly contagious")
-    print("2. Fairly contagious")
-    print("3. Mildly contagious")
     flag = True
+    #Handling the user input errors and raising required exceptions
+    #We have created custom exceprion in the ExceptionClass
     while flag == True :
         try:
-            virus_type = int(input("Please select a virus type:"))
+            print("\n Types of virus:")
+            print("1. Highly contagious")
+            print("2. Fairly contagious")
+            print("3. Mildly contagious")
+            virus_type = int(input("Please select a virus type(1,2,3):"))
             if virus_type not in [1,2,3]:
                 raise VirusTypeException
 
@@ -58,6 +58,8 @@ if __name__ == '__main__':
                 raise ThresholdValueException
 
             flag = False
+
+        #Printing the error details and re-prompting for the user input
         except VirusTypeException as e:
             print(e)
             flag = True
@@ -75,10 +77,11 @@ if __name__ == '__main__':
             print(e)
             flag = True
 
-    probability_list = []
+    probability_list = [] #This list will store the probability coing out of each run in a defined number of simulations
     #Designing different number of monte carlo simulations
     monte_carlo_simulations = [101, 1001, 10001, 100001, 1000001]
-    iter_prob_list = []
+    iter_prob_list = [] #Storing the average probability of each simulation
+    #Running simulations for different number to achieve steady state and check the Law of Large Numbers
     for i in monte_carlo_simulations:
         for j in range (1, i):
             probability = 0
@@ -87,14 +90,18 @@ if __name__ == '__main__':
             probability = red_zone_count/total_count
             probability_list.append(probability)
         avg_prob = math.ceil((sum(probability_list) / len(probability_list)) * population_size)
-        print('Number of people infected in the population of {p} is {x} based on {i} number of iterations'.format(p=population_size, x = avg_prob,i=i))
+        print('Number of people infected in the population of {p} is {x} based on {i} iterations'.format(p=population_size, x = avg_prob,i=i-1))
         iter_prob_list.append(sum(probability_list)/len(probability_list))
+        #Showing the variations in probability range on a graph for different simulations
         plt.plot(probability_list)
+        plt.title("Probaility range for {i} iterations".format(i=i-1))
         plt.show()
+    #Comparing with the threshold value provided by the user and raising an error accordingly
     if(iter_prob_list[-1]*100 > threshold_value):
         print("Based on the threshold value provided, intervention is required")
     else:
         print("No major intervention required. Some measures can be taken")
+    #Showing the achievement of steady state value with the increase in the number of iterations.
     plt.plot(iter_prob_list)
     plt.title("Variabilty in probability with the increase in number of iterations")
     plt.show()
