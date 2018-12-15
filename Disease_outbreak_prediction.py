@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from Person import Person
 from Virus import virus
+from ExceptionClass import PopulationSizeException,VirusTypeException
 
 
 def generate_score_for_patients()-> tuple:
@@ -39,13 +40,21 @@ if __name__ == '__main__':
     print("2. Fairly contagious")
     print("3. Mildly contagious")
     flag = True
-    while flag== True :
+    while flag == True :
         try:
             virus_type = int(input("Please select a virus type:"))
+            if virus_type not in [1,2,3]:
+                raise VirusTypeException
+
             population_size = int(input("Insert the number of people:"))
+            if population_size <= 0:
+                raise PopulationSizeException
             flag = False
-        except:
-            print('Invalid input type')
+        except VirusTypeException as e:
+            print(e)
+            flag = True
+        except PopulationSizeException as e:
+            print(e)
             flag = True
     probability_list = []
     #Designing different number of monte carlo simulations
