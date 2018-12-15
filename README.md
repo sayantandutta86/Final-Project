@@ -77,9 +77,9 @@ Note: We have genrated the plots to show the variation in the probability range 
 Run the program Disease_outbreak_prediction.py
 It will ask for three inputs from user:
 1) It will ask what is the contagious level of the virus. User can only enter values from 1-3 where 
-      1) 1 being Highly Contagious
-      2) 2 being Fairly Contagious
-      3) 3 being Mildly Contagious
+      1) Highly Contagious - 1
+      2) Fairly Contagious - 2
+      3) Mildly Contagious - 3
 2) Next, it wt will ask for the population size. User can only enter the population as non negative integer.
 3) After that it will ask the user for the threshold value in percentage, User can only enter values from 0 to 100
 4) After that it will show the results of number of people infected in the population for different size of iterations.
