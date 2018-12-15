@@ -12,6 +12,8 @@ class virus:
 
     def get_type_score(self) -> int:
         """ Assign a pre-defined score based on how contagious the virus is.
+        Virus type 1 - is the most contagious
+        Virus type 3 - is the least contagious
         :return: type_score
         >>> v_list= [1,2,3]
         >>> v= virus(random.choice(v_list))
