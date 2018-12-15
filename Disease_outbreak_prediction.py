@@ -40,6 +40,7 @@ if __name__ == '__main__':
     virus_type = int(input("Please select a virus type:"))
     population_size = int(input("Insert the number of people:"))
     probability_list = []
+    #Designing different number of monte carlo simulations
     monte_carlo_simulations = [101, 1001, 10001, 100001, 1000001]
     for i in monte_carlo_simulations:
         for i in range (1, i):
