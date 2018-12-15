@@ -61,8 +61,8 @@ class Person(object):
         True
         >>> 70 <= p.get_gender_score() <= 100
         True
-        >>> 70 <= p.get_gender_score() <= 100
-        True
+        >>> p.get_gender_score() < 70
+        False
 
         """
         if self.gender == 'M':

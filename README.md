@@ -21,33 +21,38 @@ If major outbreaks were predictable in the earliest stages of an outbreak, react
 If it were possible to predict when fadeout was likely to occur, the need for costly precautionary control strategies could be minimized.
 We will conduct simulations of data for given possible conditions of a fatal disease outbreak and explore the possibility of predicting a certain range or limit which might be useful for predicting major outbreaks and introduce intervention at the optimum time thus saving life as well as keeping expensive control strategies minimized.
 
-We are considering the sample of different sizes, to calculate the least number of people in red zone it would take to say that the population has a potential outbreak.
-For size of n sample, we are simulating the monte carlo upto k number of times or more for every iteration of n sample size to get its mean or true value to determine if that person is
-in red zone or not after that we keep on increasing the iteration of n unitll it reaches to the threshold value which we have assumed to be 0.6 to consider the potential outbreak in 
-that population.
-In simple terms, we are calculating the score of every individual in the sample randomly to see if it's in the redzone. After that, we will do this for all the iterations of n and execute
-this k number of times or more for the sample to get the mean value. we are calculating the probability for the sample to be the potential major outbreak as defined below
+The program takes three inputs - virus type, population size of the concerned locality and threshold level for intervention.
+The program calculates the probability of spread of the disease to red-zone patients and tells the user whether medical intervention is required or not.
+
+For size of n sample, we are performing the monte-carlo simulation to get its mean or true value to determine if that person is in red zone or not after that we keep on increasing the iteration of n untill it reaches steady steady state value.
+
+In simple terms, we are calculating the score of every individual in the sample randomly to see if it's in the redzone. After that, we will do this for all the iterations of n and execute this k number of times or more for the sample to get the mean value. We are calculating the probability for the sample to be the potential major outbreak as defined below
 
 P(outbreak) = numberofpeople in redzone/ sample size 
 
-Threshold value to consider the population has major outbreak = 0.6
+If P(outbreak) is greater than the Threshold value (provided by user) then intervention is required.
 
 ## Simulation's variables of uncertainty
 List and describe your simulation's variables of uncertainty (where you're using pseudo-random number generation). For each such variable, how did you decide the range and probability distribution to use?  Do you think it's a good representation of reality?
 
-We are currently consider 4 variables which we think are more significant than the others:
-1) Time difference between the last known patient and the current patient (Tdif) (Normal)
-2) Relative Distance (Rd) (Bernoulli) 
-3) Contagious Score (cs) (Bernoulli)
+We are considering below variables as the uncertain element in our calculations:
+1) Time difference between the last known patient and the current patient (Tdif) (Triangular Distribution)
 
-Other Factors we are considering to include:
-1) Number of contacts per day (Poisson)
-2) Immunity level based on gender (Bernoulli)
-3) Incubation days (Log-normal)
+2) Relative Distance (Rd) (Triangular Distribution)
 
+The score for a person decreases as the distance from hospital increases as the probability of spread
+decreases with increasing distance.
+ 
+3) Immunity level (based on gender) (Random distribution)
+
+As per historical data of mortality rates from various diseases taken from various health organization sources 
+it has been found that in general female have higher immunity compared to male. So female has been given a lower score 
+compared to male.
 
 ## Hypothesis or hypotheses before running the simulation:
-The factors we are considering for our model is not the exhaustive list of the factors. After research we decided on these factors as they seemed to have a significant effect in our predictions
+The factors we are considering for our model is not the exhaustive list of the factors.
+After research we zeroed in on the mentioned factors as they seemed to have a significant effect in our predictions.
+
 
 ## Analytical Summary of your findings: (e.g. Did you adjust the scenario based on previous simulation outcomes?  What are the management decisions one could make from your simulation's output, etc.)
 
