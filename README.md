@@ -5,7 +5,7 @@
 ## Team Member(s): Janki Thakkar, Sayed Shazeb Hussain, Sayantan Dutta
 
 # Monte Carlo Simulation Scenario & Purpose:
-Purpose for our project is to find if the disease outbreak will affect the major population or not.
+#### Purpose for our project is to find if the disease outbreak will affect the major population or not.
 
 Scenario :
 In a situation where there is a report of a disease which had infected number of people, in that scenario it would greatly benefit if we are able to forecast whether outbreaks of infectious disease will be major among a population. Infectious disease outbreaks have a reasonable chance of either fading out at an early stage or, in the absence of intervention, spreading widely within the population.
