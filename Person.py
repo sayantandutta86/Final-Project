@@ -15,7 +15,15 @@ class Person(object):
         """ Assign a pre-defined score based on time_diff value of an object
         The score for a person decreases as the number of days between this case and first case increases
         :return: time_diff_score
-                """
+        >>> p = Person()
+        >>> p.get_tdif_score() < 30
+        False
+        >>> p.get_tdif_score() > 100
+        False
+        >>> 30 <= p.get_tdif_score() <= 100
+        True
+
+        """
         if self.time_diff < 7:
             self.time_diff_score = 100
         elif (self.time_diff >= 7) and (self.time_diff <= 14):
@@ -27,7 +35,14 @@ class Person(object):
     def get_distance_score(self) -> int:
         """ Assign a pre-defined score based on dist_range value of an object
         The score for a person decreases as the distance from hospital increases as the cases can be reported to another hospital
-            :return: dist_range_score """
+            :return: dist_range_score
+        >>> p = Person()
+        >>> p.get_distance_score() < 30
+        False
+        >>> p1 = Person()
+        >>> 30<= p1.get_distance_score() <= 100
+        True
+        """
         if self.dist_range <= 1:
             self.dist_range_score = 100
         elif (self.dist_range > 1) and (self.dist_range <= 4):
@@ -40,7 +55,16 @@ class Person(object):
         """ Assign a pre-defined score based on gender value of an object
         We are defining the score as per immunity by gender.
         As per study, Female have higher immunity, so they are given a lower score and male is given a higher score
-            :return: gender_score """
+            :return: gender_score
+        >>> p = Person()
+        >>> p.get_gender_score() >= 70
+        True
+        >>> 70 <= p.get_gender_score() <= 100
+        True
+        >>> 70 <= p.get_gender_score() <= 100
+        True
+
+        """
         if self.gender == 'M':
             self.gender_score = 100
         else:
@@ -50,7 +74,14 @@ class Person(object):
     def get_total_score(self) -> int:
         """ Assign a pre-defined score based on all other parameters related to the object
         Summing all the scores from different factors to get an aggregate score.
-            :return: person_total_score """
+            :return: person_total_score
+        >>> p = Person()
+        >>> p.get_total_score() <= 300
+        True
+        >>> p.get_total_score() >= 130
+        True
+
+        """
         self.person_total_score = self.get_distance_score() + self.get_distance_score()+ self.get_gender_score()
         return self.person_total_score
 
