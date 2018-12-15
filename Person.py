@@ -6,8 +6,8 @@ class Person(object):
     def __init__(self):
         """ This is the method which intializes all the variables associated with Person class
         """
-        self.time_diff = np.random.randint(0, 21) #Time before the first case was reported
-        self.dist_range = np.random.randint(0, 8) #Distance from the hospital
+        self.time_diff = int(np.random.triangular(0,7,21)) #Time before the first case was reported
+        self.dist_range = np.random.triangular(0, 3, 8) #Distance from the hospital
         self.gender = random.choice(['M','F']) #Gender of the person
         self.person_total_score = 0 #Total score assigned to each person based on the factors considered
 

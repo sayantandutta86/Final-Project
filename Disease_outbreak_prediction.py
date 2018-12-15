@@ -24,7 +24,7 @@ def generate_score_for_patients()-> tuple:
         #the score based on the virus he is infected with.
         aggregate_score = person1.get_total_score() + virus1.get_type_score()
         #If the aggregate score exceeds a threshold level the patient is considered in red-zone.
-        if aggregate_score >= 250:
+        if aggregate_score >= 300:
             red_zone = red_zone+1
         total_count = total_count + 1
         aggregate_score_list.append(aggregate_score)
