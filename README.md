@@ -72,3 +72,8 @@ It will ask for three inputs from user:
 5) Finally, based on the functions inside the code it will show if the intervention is required.
  
 ## All Sources Used:
+
+https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0057878#s1
+https://www.theatlantic.com/science/archive/2017/10/pandemic-prediction-challenge/543954/
+https://www.sciencedirect.com/science/article/pii/S0378113505001422?via%3Dihub
+https://www.sciencedirect.com/science/article/pii/S0378113505001410
