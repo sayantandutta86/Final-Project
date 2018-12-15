@@ -70,7 +70,7 @@ if __name__ == '__main__':
             print(e)
             flag = True
         except Exception as e:
-            print('Some error has occured')
+            print('Error Occured, Details:')
             print(e)
             flag = True
 
