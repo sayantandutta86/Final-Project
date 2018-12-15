@@ -13,6 +13,12 @@ class virus:
     def get_type_score(self) -> int:
         """ Assign a pre-defined score based on how contagious the virus is.
         :return: type_score
+
+        >>> v= virus()
+        >>> v.type in ['C','FC','MC']
+        True
+        >>> 10 <= v.get_type_score() <= 100
+        True
                 """
         if self.type == 'C':
             self.type_score = 100
