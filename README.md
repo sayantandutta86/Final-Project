@@ -56,6 +56,19 @@ After research we zeroed in on the mentioned factors as they seemed to have a si
 
 ## Analytical Summary of your findings: (e.g. Did you adjust the scenario based on previous simulation outcomes?  What are the management decisions one could make from your simulation's output, etc.)
 
+The program calculates the probability of spread of the disease and tells the user whether medical intervention is required or not based on the input provided by the user. With different iteration rates and different probability outcomes the final outcome varies. So conditions were adjusted based on those factors. Different diseases have different threshold levels of outbreak, so for a given threshold level, virus level and population of the locality the program will give the result whether a medical intervention by the management is necessary or not.
+
 ## Instructions on how to use the program:
 
+Run the program Disease_outbreak_prediction.py
+It will ask for three inputs from user:
+1) It will ask what is the contagious level of the virus is in below format. User can only enter values from 1-3 where 
+      1) 1 being Highly Contagious
+      2) 2 being Fairly Contagious
+      3) 3 being Mildly Contagious
+2) Next, it wt will ask for the population size in below format. User can only enter the population as non negative integer.
+3) After that it will ask the user for the threshold value in percentage in below format, User can only enter values from 0 to 100
+4) After that it will show the results of number of people infected in the population for different size of iterations.
+5) Finally, based on the functions inside the code it will show if the intervention is required.
+ 
 ## All Sources Used:
