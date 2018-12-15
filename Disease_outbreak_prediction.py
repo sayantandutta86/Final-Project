@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from Person import Person
 from Virus import virus
-from ExceptionClass import PopulationSizeException,VirusTypeException
+from ExceptionClass import PopulationSizeException,VirusTypeException,ThresholdValueException,FloatException
 
 
 def generate_score_for_patients()-> tuple:
@@ -49,6 +49,13 @@ if __name__ == '__main__':
             population_size = int(input("Insert the number of people:"))
             if population_size <= 0:
                 raise PopulationSizeException
+
+            threshold_value = int(input("Insert the threshold percentage:"))
+            if isinstance(threshold_value,float):
+                raise FloatException
+            if threshold_value > 100 or threshold_value > 0:
+                raise ThresholdValueException
+
             flag = False
         except VirusTypeException as e:
             print(e)
@@ -56,6 +63,17 @@ if __name__ == '__main__':
         except PopulationSizeException as e:
             print(e)
             flag = True
+        except FloatException as e:
+            print(e)
+            flag = True
+        except ThresholdValueException as e:
+            print(e)
+            flag = True
+        except Exception as e:
+            print('Some error has occured')
+            print(e)
+            flag = True
+
     probability_list = []
     #Designing different number of monte carlo simulations
     monte_carlo_simulations = [101, 1001, 10001, 100001, 1000001]
