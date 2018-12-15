@@ -1,19 +1,11 @@
 # 590PR Final_Project
-Fork from here to create your final project repository.
-
-Two things are different than all the previous assignments in 590PR regarding the permissions settings:
-
-1. Please KEEP the "All_Students" team to have Read access.  
-2. Whenever you choose to, you are welcome to change your Final Project repository to private or to public.  This will enable you to list it in your resume, website, or other portfolio.
-
-DELETE these lines from TEMPLATE up.
 
 # Title: Prediction of a disease outbreak using Monte Carlo Simulation
 
 ## Team Member(s): Janki Thakkar, Sayed Shazeb Hussain, Sayantan Dutta
 
 # Monte Carlo Simulation Scenario & Purpose:
-Purpose for our project is to find if the disease outbreak will affect the major population or not.
+#### Purpose for our project is to find if the disease outbreak will affect the major population or not.
 
 Scenario :
 In a situation where there is a report of a disease which had infected number of people, in that scenario it would greatly benefit if we are able to forecast whether outbreaks of infectious disease will be major among a population. Infectious disease outbreaks have a reasonable chance of either fading out at an early stage or, in the absence of intervention, spreading widely within the population.
@@ -37,14 +29,16 @@ List and describe your simulation's variables of uncertainty (where you're using
 
 We are considering below variables as the uncertain element in our calculations:
 1) Time difference between the last known patient and the current patient (Tdif) (Triangular Distribution)
+We have used right skewed triangular distribution because of the probability of getting the value in the lower range is much more in case of time difference and relative distance
 
 2) Relative Distance (Rd) (Triangular Distribution)
+We have used right skewed triangular distribution because of the probability of getting the value in the lower range is much more in case of time difference and relative distance
 
 The score for a person decreases as the distance from hospital increases as the probability of spread
 decreases with increasing distance.
  
 3) Immunity level (based on gender) (Random distribution)
-
+We have used random distribution for this variable because no special handling was need for this variable.
 As per historical data of mortality rates from various diseases taken from various health organization sources 
 it has been found that in general female have higher immunity compared to male. So female has been given a lower score 
 compared to male.
@@ -58,16 +52,35 @@ After research we zeroed in on the mentioned factors as they seemed to have a si
 
 The program calculates the probability of spread of the disease and tells the user whether medical intervention is required or not based on the input provided by the user. With different iteration rates and different probability outcomes the final outcome varies. So conditions were adjusted based on those factors. Different diseases have different threshold levels of outbreak, so for a given threshold level, virus level and population of the locality the program will give the result whether a medical intervention by the management is necessary or not.
 
+
+#### Output Example
+Types of virus:
+1. Highly contagious
+2. Fairly contagious
+3. Mildly contagious
+Please select a virus type(1,2,3):1
+Insert the number of people:50
+Insert the threshold percentage:40
+Number of people infected in the population of 50 is 30 based on 100 iterations
+Number of people infected in the population of 50 is 30 based on 1000 iterations
+Number of people infected in the population of 50 is 31 based on 10000 iterations
+Number of people infected in the population of 50 is 31 based on 100000 iterations
+Number of people infected in the population of 50 is 30 based on 1000000 iterations
+Based on the threshold value provided, intervention is required
+
+Note: We have genrated the plots to to show the variation in the probability range for giver number of iterations. It is in pdf file in the repository
+
+
 ## Instructions on how to use the program:
 
 Run the program Disease_outbreak_prediction.py
 It will ask for three inputs from user:
-1) It will ask what is the contagious level of the virus is in below format. User can only enter values from 1-3 where 
+1) It will ask what is the contagious level of the virus. User can only enter values from 1-3 where 
       1) 1 being Highly Contagious
       2) 2 being Fairly Contagious
       3) 3 being Mildly Contagious
-2) Next, it wt will ask for the population size in below format. User can only enter the population as non negative integer.
-3) After that it will ask the user for the threshold value in percentage in below format, User can only enter values from 0 to 100
+2) Next, it wt will ask for the population size. User can only enter the population as non negative integer.
+3) After that it will ask the user for the threshold value in percentage, User can only enter values from 0 to 100
 4) After that it will show the results of number of people infected in the population for different size of iterations.
 5) Finally, based on the functions inside the code it will show if the intervention is required.
  
