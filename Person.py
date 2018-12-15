@@ -13,7 +13,9 @@ class Person(object):
 
     def get_tdif_score(self) -> int:
         """ Assign a pre-defined score based on time_diff value of an object
-        The score for a person decreases as the number of days between this case and first case increases
+        The score for a person decreases with increasing tdiff
+        as the number of days increases probability of spread of disease from another patient decreases which means
+        probability of the patient getting infected standalone rises, hence lowering the possibility of an outbreak.
         :return: time_diff_score
         >>> p = Person()
         >>> p.get_tdif_score() < 30
@@ -34,7 +36,8 @@ class Person(object):
 
     def get_distance_score(self) -> int:
         """ Assign a pre-defined score based on dist_range value of an object
-        The score for a person decreases as the distance from hospital increases as the cases can be reported to another hospital
+        The score for a person decreases as the distance from hospital increases as the probability of spread
+        decreases with increasing distance.
             :return: dist_range_score
         >>> p = Person()
         >>> p.get_distance_score() < 30
@@ -54,7 +57,9 @@ class Person(object):
     def get_gender_score(self) -> int:
         """ Assign a pre-defined score based on gender value of an object
         We are defining the score as per immunity by gender.
-        As per study, Female have higher immunity, so they are given a lower score and male is given a higher score
+        As per historical data of mortality rates from various diseases taken from various health organization sources
+        it has been found that in general female have higher immunity compared to male. So female has been given a lower score
+        compared to male.
             :return: gender_score
         >>> p = Person()
         >>> p.get_gender_score() >= 70
