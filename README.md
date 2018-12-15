@@ -37,11 +37,22 @@ List and describe your simulation's variables of uncertainty (where you're using
 
 We are considering below variables as the uncertain element in our calculations:
 1) Time difference between the last known patient and the current patient (Tdif) (Triangular Distribution)
-2) Relative Distance (Rd) (Triangular Distribution) 
+
+2) Relative Distance (Rd) (Triangular Distribution)
+
+The score for a person decreases as the distance from hospital increases as the probability of spread
+decreases with increasing distance.
+ 
 3) Immunity level (based on gender) (Random distribution)
 
+As per historical data of mortality rates from various diseases taken from various health organization sources 
+it has been found that in general female have higher immunity compared to male. So female has been given a lower score 
+compared to male.
+
 ## Hypothesis or hypotheses before running the simulation:
-The factors we are considering for our model is not the exhaustive list of the factors. After research we zeroed in on the mentioned factors as they seemed to have a significant effect in our predictions.
+The factors we are considering for our model is not the exhaustive list of the factors.
+After research we zeroed in on the mentioned factors as they seemed to have a significant effect in our predictions.
+
 
 ## Analytical Summary of your findings: (e.g. Did you adjust the scenario based on previous simulation outcomes?  What are the management decisions one could make from your simulation's output, etc.)
 
