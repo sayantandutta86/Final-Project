@@ -53,7 +53,7 @@ if __name__ == '__main__':
             threshold_value = int(input("Insert the threshold percentage:"))
             if isinstance(threshold_value,float):
                 raise FloatException
-            if threshold_value > 100 or threshold_value > 0:
+            if threshold_value > 100 or threshold_value < 0:
                 raise ThresholdValueException
 
             flag = False
