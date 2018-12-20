@@ -91,3 +91,20 @@ https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0057878#s1
 https://www.theatlantic.com/science/archive/2017/10/pandemic-prediction-challenge/543954/
 https://www.sciencedirect.com/science/article/pii/S0378113505001422?via%3Dihub
 https://www.sciencedirect.com/science/article/pii/S0378113505001410
+
+
+##Team members Contributions
+
+Below is a basic workflow of the project and contributions of the team members.
+The entire team worked very collaboratively with each other and contributing in each others work.
+
+Janki, Sayed and Sayantan discussed and created the project requirement, and the power-point presentation.
+Sayantan drafted the preliminary abstract and the requirements.
+Janki contributed to the preliminary abstract.
+Janki then converted the initial requirements into functions and code.
+Sayed created the classes for the required variables and functions within the classes in object oriented format.
+Sayantan added new functions and updated some existing functions based on initial test simulation results.
+Sayed added exception handling functionality to the code.
+Sayantan and Janki worked on making the code interactive and perform based on user input. 
+Janki, Sayed and Sayantan created the DocTests.
+Janki, Sayed and Sayantan performed end-to-end testing for different scenarios.
